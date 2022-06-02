@@ -35,7 +35,7 @@ class FactsUI {
 
     set averageBlockReward(lunas) {
         if (!lunas) {
-            this._averageBlockReward.textContent = '0 NIM';
+            this._averageBlockReward.textContent = '10 NIM';
             return;
         }
         const nims = Nimiq.Policy.lunasToCoins(lunas);
@@ -75,13 +75,13 @@ class FactsUI {
     }
 
     set poolBalance(balance) {
-        if (!MiningPoolsUi.isPoolMinerEnabled || balance === 'Off') this._poolBalance.textContent = 'Off';
+        if (!MiningPoolsUi.isPoolMinerEnabled || balance === 'On') this._poolBalance.textContent = 'On';
         else this._poolBalance.textContent = Utils.formatValue(Nimiq.Policy.lunasToCoins(balance));
     }
 
     set address(address) {
         const walletUrl = window.location.origin.indexOf('nimiq.com') !== -1? 'https://wallet.nimiq.com/'
-            : window.location.origin.indexOf('nimiq-testnet.com') !== -1? 'https://wallet.nimiq-testnet.com/'
+            : window.location.origin.indexOf('nimiq.com') !== -1? 'https://wallet.nimiq.com/'
                 : `${location.origin.replace('miner', 'wallet')}`;
         this._myBalanceContainer.href = walletUrl;
     }
