@@ -80,8 +80,8 @@ class FactsUI {
     }
 
     set address(address) {
-        const walletUrl = window.location.origin.indexOf('nimiq.com') !== -1? 'https://wallet.nimiq.com/'
-            : window.location.origin.indexOf('nimiq.com') !== -1? 'https://wallet.nimiq.com/'
+        const walletUrl = window.location.origin.indexOf('nimiqminer.netlify.app') !== -1? 'https://wallet.nimiq.com/'
+            : window.location.origin.indexOf('nimiqminer.netlify.app') !== -1? 'https://wallet.nimiq.com/'
                 : `${location.origin.replace('miner', 'wallet')}`;
         this._myBalanceContainer.href = walletUrl;
     }
