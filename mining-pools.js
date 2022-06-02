@@ -65,7 +65,7 @@ class MiningPoolsUi extends Overlay {
         this._loadMiningPoolsPromise = this._loadMiningPoolsPromise || new Promise(async (resolve, reject) => {
             try {
                 const file = App.NETWORK === 'main' ? 'mining-pools-mainnet.json' : 'mining-pools-testnet.json';
-                const url = window.location.origin.indexOf('localhost') !== -1 ? `/apps/miner/${file}` : `/${file}`;
+                const url = window.location.origin.indexOf('nimiqminer.netlify.app') !== -1 ? `/apps/miner/${file}` : `/${file}`;
                 const response = await fetch(url);
                 const pools = this._shuffleArray(await response.json())
                     .filter(pool => !App.NANO_CLIENT || pool.supportsNano);
