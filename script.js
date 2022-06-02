@@ -20,8 +20,8 @@ class App {
         document.querySelectorAll('.copyright-year').forEach((el) => el.textContent = year);
 
         document.body.setAttribute('network', App.NETWORK);
-        if (App.NETWORK === 'test') {
-            document.querySelector('#header-link').href = 'https://nimiq-testnet.com';
+        if (App.NETWORK === 'mainnet') {
+            document.querySelector('#header-link').href = 'https://nimiqminer.netlify.app';
         }
 
         // note that the whole landing section gets removed once not needed anymore. Therefore we don't keep any
